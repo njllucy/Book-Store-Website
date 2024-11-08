@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="main.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="text-white font-poppins flex justify-center items-center min-h-[100vh] bg-slate-600">
+    <div class="rounded-md relative w-[750px] h-[450px] shadow-2xl shadow-[#cf9ef7]">
+       <div class="flex">
+        <div class="left-0 p-[40px] absolute top-0 w-[50%] h-[100%] flex justify-center flex-col">
+            <h2 class="text-center text-[32px]">Login</h2>
+            <form action="" onsubmit="login(event)">
+                <div class="relative w-100% h-[50px] mt-[25px] ">
+                    <input type="text" name="username" required class="w-[100%] h-[100%] bg-transparent outline-none text-[16px] text-white font-[600] border-b-[2px] border-white pr-[23px]">
+                    <label for="name" class="absolute top-[50%] left-0 transform  -translate-y-[150%] text-white ">Username</label>
+                    <i class="fa-solid fa-user absolute top-[30%] right-0 text-[18px] "></i>
+                </div>
+                <div class="relative w-100% h-[50px] mt-[25px]">
+                    <input type="password" name="password" required class="w-[100%] h-[100%] bg-transparent outline-none text-[16px] text-white font-[600] border-b-[2px] border-white pr-[23px]">
+                    <label for="password" class="absolute top-[50%] left-0 transform -translate-y-[150%] text-white ">Password</label>
+                    <i class="fa-solid fa-lock absolute top-[30%] right-0 text-[18px] hover:text-pink-800 "></i>
+                </div>
+                <div class="relative w-100% h-[50px] mt-[25px] bg-transparent rounded-[40px] text-[20px] font-[600]  border-2 border-[#6DA5C0] text-center flex justify-center">
+                    <button type="submit" >
+                    <a href="index.html">Login</a>
+                    </button>
+                </div> <br>
+                <div class="text-center">
+                    <p>Don't Have an account ? <a href="register.html" class="text-purple-400">Register</a></p>
+                </div>
+            </form>
+        </div>
+       <img src="/images/ban.jpg" alt="" class="h-[445px] absolute right-0 hidden sm:block">
+       </div>
+    </div>
+    <script>
+
+       
+ // signup function
+ function login(event) {
+    event.preventDefault();
+   
+    // Retrieve values from input fields
+    var name = document.querySelector("input[name='username']").value;
+  
+    var password = document.querySelector("input[name='password']").value;
+  
+    
+    // Create a user object with the form data
+    var user = {
+        name: name,
+        
+        password: password,
+        
+    };
+
+    // Get existing users from local storage, or initialize as empty array
+    var users = JSON.parse(localStorage.getItem("users")) || [];
+    
+    // Add the new user to the array
+    users.push(user);
+    
+    // Save the updated users array back to local storage
+    localStorage.setItem("users", JSON.stringify(users));
+    console.log("User added");
+    
+    // Optionally, clear form fields after submission
+    document.querySelector("form").reset();
+    
+    // Reload the page
+    window.location.reload();
+}
+
+       
+
+
+    </script>
+</body>
+</html>

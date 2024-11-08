@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* npx tailwindcss -i ./main.css -o ./output.css --watch */
+.book-card{
+    @apply hover:shadow-xl  transition-shadow duration-300 p-3 w-[250px] h-[400px] items-center text-center rounded-2xl shadow-md dark:bg-slate-900 dark:text-white dark:shadow-[#cf9ef7]
+}
+.common-btn{
+   @apply  bg-purple-500 hover:bg-gradient-to-r from-[#f786e8] to-[#a868dc] rounded-lg px-8 p-2 text-white text-center font-poppins font-semibold
+}
+.book-card-btn{
+    @apply flex gap-[5px] justify-center items-center bg-purple-500 hover:bg-gradient-to-r from-[#f786e8] to-[#a868dc] rounded-md px-8 p-2 text-white font-poppins font-semibold
+}
+.book-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }

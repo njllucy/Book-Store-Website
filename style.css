@@ -1,0 +1,31 @@
+/* Default light mode */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark mode styles */
+.dark-theme {
+    background-color: rgb(15, 23, 42);
+    color: #ffffff;
+}
+.dark-theme #nav{
+    background-color: rgb(15, 23, 42);
+    color:white;
+}
+.dark-theme #list{
+    background-color: rgb(15, 23, 42);
+    color:white;
+    box-shadow: 0 4px 8px 0 #a868dc;
+}
+.dark-theme #hero{
+    width: fit-content;
+    background-color: rgb(15, 23, 42);
+    color:white;
+}
+.dark-theme #feature{
+    background-color: rgb(15, 23, 42);
+    color:white;
+    box-shadow: 0 4px 8px 0 #a868dc;
+}
+
