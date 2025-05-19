@@ -21,16 +21,15 @@
       transform: scale(1.05);
       transition: transform 0.3s ease-in-out;
     }
-
+    
       </style>
 </head>
-<body class="dark:bg-slate-900 bg-[#fcfafb]">
+<body class="dark:bg-slate-900 bg-[#fcfafb] overflow-x-hidden">
     <!-- <nav class="fixed"> -->
       <div id="nav" class="  shadow-[#d5aaf8] p-5 dark:text-white  border-2 border-[#d5aaf8] border-t-0 border-l-0 border-r-0">
         <div class="flex justify-between sm:mx-10 mx-1 ">
             <div>
                 <h1 class="text-xl sm:text-3xl  font-roboto font-[600]">StoryNest</h1>
-                <h6><a href="admin.html">Admin</a>
                 </h6>
             </div>
             <div class="flex justify-center items-center sm:gap-5 gap-5">
@@ -69,7 +68,7 @@
           <div id="hero" class="m-10 sm:flex sm:flex-row flex-col bg-[#fcfafb] gap-[20px] dark:text-white dark:bg-slate-900   ">
             <div class="sm:mt-28 mt-5 p-5">
                 <h1 class="lg:text-4xl text-3xl font-bold font-mono ">Unleash Your <span class="text-[#a868dc]">CREATIVITY</span> <br> With The Power Of A <span class="text-[#a868dc]">BOOK</span></h1> <br>
-                <p class="text-[14px] text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum minus quaerat ipsam  <br>exercitationem necessitatibus adipisci totam! Minima fugiat a alias labore, amet numquam <br> sint quibusdam quos eius illo, nisi reiciendis consequatur non earum quam porro incidunt <br> enim recusandae rerum excepturi modi! Obcaecati tenetur officiis consectetur perferendis quaerat sapiente. Hic, alias!</p> <br>
+                <p class="text-[14px] text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum minus quaerat ipsam  <br>exercitationem necessitatibus adipisci totam! Minima fugiat a alias labore, amet numquam <br> sint quibusdam quos eius illo, nisi reiciendis consequatur non earum quam porro incidunt <br> enim recusandae rerum excepturi modi! Obcaecati tenetur officiis consectetur perferendis quaerat sapiente.</p> <br>
                 <button class="common-btn">
                    <a href="shop.html"> Discover More...</a>
                 </button>
@@ -86,7 +85,7 @@
           <div class="m-10 sm:flex sm:flex-row flex-col  justify-center items-center gap-[20px] dark:text-white dark:bg-slate-900  ">
             <div class=" p-5">
                 <h1 class="sm:text-4xl text-3xl font-bold font-mono"> <span class="text-[#a868dc]">About Us</span></h1> <br>
-                <p class="text-[14px] text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum minus quaerat ipsam  <br>exercitationem necessitatibus adipisci totam! Minima fugiat a alias labore, amet numquam <br> sint quibusdam quos eius illo, nisi reiciendis consequatur non earum quam porro incidunt <br> enim recusandae rerum excepturi modi! Obcaecati tenetur officiis consectetur perferendis quaerat sapiente. Hic, alias!</p> <br>
+                <p class="text-[14px] text-gray-600 dark:text-gray-400 leading-relaxed">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum minus quaerat ipsam <br>exercitationem necessitatibus adipisci totam! Minima fugiat a alias labore, amet numquam <br> sint quibusdam quos eius illo, nisi reiciendis consequatur non earum quam porro incidunt enim recusandae rerum excepturi modi! Obcaecati tenetur officiis consectetur perferendis quaerat sapiente. Hic, alias!</p> <br>
                 <button class="common-btn " id="readbtn">
                     <a href="about.html">Read More...</a>
                 </button>
@@ -149,7 +148,7 @@
         <!-- choose us  starts-->
                     <div id="choose" class="mt-10">
                         <h1 class="sm:text-4xl text-3xl font-bold font-mono text-center dark:text-white">Why Choose The <span class="text-[#a868dc]">StoryNest</span> Bookshop</h1> <br><br>
-                    <p class="text-center text-[14px] text-gray-600 mx-40">Starting off in an eighteenth century London,this book  invites readers to an exciting journey.The lifelong fight of  main protogonist's crime solving.The life pf his fight against the biggest villains</p>
+                    <p class="text-center text-[14px] text-gray-600 dark:text-gray-400 mx-40">Starting off in an eighteenth century London,this book  invites readers to an exciting journey.The lifelong fight of  main protogonist's crime solving.The life pf his fight against the biggest villains</p>
                    <br>
                     <div class="flex justify-center items-center">
                     <button class="common-btn w-52">
@@ -236,6 +235,23 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
+  const mainElem = document.getElementById("main");
+
+  // Apply saved theme on load
+  if (localStorage.getItem("theme") === "dark") {
+    mainElem.classList.add("dark");
+  }
+
+  function darkmode() {
+    mainElem.classList.toggle("dark");
+    
+    if (mainElem.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+
   // Initialize Swiper with only mouse control enabled
   const swiper = new Swiper('.swiper-container', {
     slidesPerView: 4,               // Show 4 books per slide
@@ -258,6 +274,7 @@
       },
     },
   });
+
 </script>
 
         <script src="script.js"></script>

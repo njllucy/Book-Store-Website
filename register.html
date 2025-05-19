@@ -56,6 +56,22 @@
     </div>
   <script>
 
+ const mainElem = document.getElementById("main");
+
+  if (localStorage.getItem("theme") === "dark") {
+    mainElem.classList.add("dark");
+  }
+
+  function darkmode() {
+    mainElem.classList.toggle("dark");
+    
+    if (mainElem.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+
    // signup function
 function signup(event) {
     event.preventDefault();

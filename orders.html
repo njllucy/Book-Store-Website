@@ -80,9 +80,9 @@
         <img class="w-20 h-20 object-cover rounded-lg mr-4" src="./images/book-1.png" alt="Product Image">
         <div>
           <h2 class="text-lg font-semibold text-gray-700 dark:text-white">The Art City</h2>
-          <p class="text-gray-500">Order Date: 2023-11-07</p>
-          <p class="text-gray-500">Quantity: 2</p>
-          <p class="text-gray-700 font-bold">Total: $45.00</p>
+          <p class="text-gray-400">Order Date: 2023-11-07</p>
+          <p class="text-gray-400">Quantity: 2</p>
+          <p class="text-gray-200 font-bold">Total: $45.00</p>
         </div>
       </div>
       <!-- Delete Button -->
@@ -99,9 +99,9 @@
         <img class="w-20 h-20 object-cover rounded-lg mr-4" src="./images/book-2.png" alt="Product Image">
         <div>
           <h2 class="text-lg font-semibold text-gray-700 dark:text-white">Happy</h2>
-          <p class="text-gray-500">Order Date: 2023-10-15</p>
-          <p class="text-gray-500">Quantity: 1</p>
-          <p class="text-gray-700 font-bold">Total: $25.00</p>
+          <p class="text-gray-400">Order Date: 2023-10-15</p>
+          <p class="text-gray-400">Quantity: 1</p>
+          <p class="text-gray-200 font-bold">Total: $25.00</p>
         </div>
       </div>
       <button class="text-red-500 hover:text-red-700 focus:outline-none">
@@ -182,7 +182,23 @@
         </p>
       </div>
     </footer>
-        
+       <script>
+     const mainElem = document.getElementById("main");
+          if (localStorage.getItem("theme") === "dark") {
+    mainElem.classList.add("dark");
+  }
+
+  function darkmode() {
+    mainElem.classList.toggle("dark");
+    
+    if (mainElem.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+       </script> 
  
 
         <script src="script.js"></script>

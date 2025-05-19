@@ -88,7 +88,7 @@
 
 <!-- Product Cards Section -->
 <section class="p-4">
-    <div id="product-list" class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 mx-20">
+    <div id="product-list" class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10 mx-20">
         <!-- Product 1 -->
         <div class="book-card image product" data-title="Focus" id="product">
             <img src="./images/books/focus.jpg" alt="Focus" class="w-full h-[220px] object-cover">
@@ -374,6 +374,21 @@
   </footer>
 <!-- JavaScript for Filtering -->
 <script>
+ const mainElem = document.getElementById("main");
+  if (localStorage.getItem("theme") === "dark") {
+    mainElem.classList.add("dark");
+  }
+
+  function darkmode() {
+    mainElem.classList.toggle("dark");
+    
+    if (mainElem.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+
     function search() {
         const query = document.getElementById('search-item').value.toLowerCase();
         const products = document.querySelectorAll('.product');
